@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS categories;
 
 -- Crear tabla de usuarios
 CREATE TABLE IF NOT EXISTS users (

@@ -26,16 +26,61 @@ INSERT IGNORE INTO categories (name, description) VALUES
 
 -- Insertar datos en la tabla de productos
 INSERT IGNORE INTO products (name, description, price, image_url, category_id) VALUES
-('Escape Akrapovic', 'Escape de alto rendimiento en fibra de carbono', 1200.00, 'akrapovic.jpg', 1),
-('Aceite Castrol 4T', 'Aceite sintético para motos de 4 tiempos', 30.00, 'default.jpg',2),
-('Filtro de aire K&N', 'Filtro de aire de alto rendimiento', 50.00, 'default.jpg', 3),
-('Casco Shoei', 'Casco integral de alta seguridad', 400.00, 'default.jpg', 4),
-('Neumático Michelin', 'Neumático radial para motos deportivas', 150.00,'default.jpg', 5),
-('Manillar Rizoma', 'Manillar de aluminio anodizado', 120.00,'default.jpg', 6),
-('Llave dinamométrica', 'Llave para apriete controlado', 80.00, 'default.jpg',7),
-('Chaqueta Alpinestars', 'Chaqueta con protecciones integradas', 250.00, 'default.jpg', 8),
-('Intercomunicador Sena', 'Sistema de comunicación para casco', 200.00, 'default.jpg', 9),
-('Rodilleras Dainese', 'Protección para las rodillas', 90.00, 'default.jpg', 10);
+-- Accesorios de Rendimiento
+('Escape Akrapovic Ninja 400', 'Escape de alto rendimiento en fibra de carbono para motocicletas kawasaki ninja 400', 1200.00, 'akrapovic.jpg', 1), -- Producto existente
+('Filtro de potencia BMC', 'Filtro de aire de alto flujo para rendimiento mejorado', 75.00, 'default.jpg', 1),
+('Filtro de aceite Hiflofiltro', 'Filtro de aceite de alto rendimiento', 15.00, 'default.jpg', 1),
+('Bujías NGK Iridium', 'Bujías de alto rendimiento para motores', 25.00, 'default.jpg', 1),
+('Kit de carburador Keihin', 'Kit de carburador de alto rendimiento', 350.00, 'default.jpg', 1),
+
+-- Lubricantes
+('Lubricante Motul Chain Lube', 'Lubricante para cadenas de moto', 20.00, 'default.jpg', 2),
+('Grasa para rodamientos Bel-Ray', 'Grasa especial para rodamientos de alta carga', 10.00, 'default.jpg', 2),
+('Aditivo limpiador de inyectores STP', 'Aditivo para limpiar inyectores y mejorar el rendimiento', 12.00, 'default.jpg', 2),
+('Aceite Repsol Moto 10W40', 'Aceite semisintético para motos de alta cilindrada', 35.00, 'default.jpg', 2),
+
+-- Repuestos
+('Pastillas de freno Brembo', 'Pastillas de freno de alto rendimiento', 60.00, 'default.jpg', 3),
+('Cadena DID', 'Cadena reforzada para motos', 100.00, 'default.jpg', 3),
+('Amortiguador Öhlins', 'Amortiguador trasero de alto rendimiento', 800.00, 'default.jpg', 3),
+('Kit de cadena y piñones AFAM', 'Kit completo de transmisión para motos deportivas', 150.00, 'default.jpg', 3),
+
+-- Equipamiento
+('Guantes Dainese', 'Guantes de cuero con protección', 90.00, 'default.jpg', 4),
+('Botas Sidi', 'Botas de protección para motociclistas', 300.00, 'default.jpg', 4),
+('Pantalones Rev’it!', 'Pantalones con protecciones de kevlar', 180.00, 'default.jpg', 4),
+
+-- Neumáticos
+('Neumático Pirelli Diablo Rosso', 'Neumático deportivo de alto rendimiento', 160.00, 'default.jpg', 5),
+('Neumático Bridgestone Battlax', 'Neumático touring de larga duración', 140.00, 'default.jpg', 5),
+('Neumático Dunlop Sportmax', 'Neumático de competición para moto', 170.00, 'default.jpg', 5),
+
+-- Accesorios Estéticos
+('Retrovisores Barracuda', 'Retrovisores de diseño deportivo', 75.00, 'default.jpg', 6),
+('Cubiertas de motor Puig', 'Cubiertas de motor de diseño exclusivo', 90.00, 'default.jpg', 6),
+('Soporte de matrícula R&G Racing', 'Soporte de matrícula minimalista', 60.00, 'default.jpg', 6),
+
+-- Herramientas
+('Kit de herramientas CruzTOOLS', 'Kit básico de herramientas para motociclistas', 45.00, 'default.jpg', 7),
+('Elevador de moto Biketek', 'Elevador hidráulico para motos', 180.00, 'default.jpg', 7),
+('Cargador de batería Optimate', 'Cargador inteligente para baterías de moto', 60.00, 'default.jpg', 7),
+
+-- Ropa
+('Camiseta Alpinestars', 'Camiseta casual para motociclistas', 25.00, 'default.jpg', 8),
+('Gorra Fox Racing', 'Gorra de diseño para motociclistas', 20.00, 'default.jpg', 8),
+('Mochila Kriega', 'Mochila impermeable para motociclistas', 150.00, 'default.jpg', 8),
+
+-- Electrónica
+('Luces LED Philips', 'Luces LED de alto rendimiento para motos', 80.00, 'default.jpg', 9),
+('Alarma Xena', 'Sistema de alarma antirrobo para motos', 120.00, 'default.jpg', 9),
+('Cámara GoPro', 'Cámara de acción para grabación en moto', 400.00, 'default.jpg', 9),
+
+-- Protecciones
+('Chaleco Airbag Dainese', 'Chaleco con airbag incorporado para protección máxima', 600.00, 'default.jpg', 10),
+('Protector de espalda Alpinestars', 'Protección dorsal para motociclistas', 130.00, 'default.jpg', 10),
+('Guarda manos Acerbis', 'Protección para las manos en off-road', 70.00, 'default.jpg', 10),
+('Protector de cárter Givi', 'Protección para el cárter en motos off-road', 120.00, 'default.jpg', 10),
+('Slider R&G', 'Slider de protección para caídas', 95.00, 'default.jpg', 10);
 
 -- Insertar datos en la tabla de etiquetas
 INSERT IGNORE INTO tags (name) VALUES

@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -34,6 +35,33 @@ public class ProductService implements IProductService {
     public Page<Product> getAllProducts(Pageable pageable) {
         Page<Product> productsPage = iProductRepository.findAll(pageable);
         return productsPage.map(this::setProductImage);
+    }
+
+    @Override
+    public Product getProductById(Long productId) {
+        Product product;
+        try {
+            product = iProductRepository.findById(productId).orElse(null);
+            if (product != null) {
+                setProductImage(product);
+            }
+            return product;
+        } catch (Exception e) {
+            log.error("Error in ProductService.getProductById");
+            throw e;
+        }
+    }
+
+    @Override
+    public Page<Product> getProductsByQuery(String query, Pageable pageable) {
+        Page<Product> productsPage = iProductRepository.findByNameContainingIgnoreCase(query, pageable);
+        return productsPage.map(this::setProductImage);
+    }
+
+    @Override
+    public List<Product> getAllProductsByCategory(Long categoryId) {
+        List<Product> productsPage = iProductRepository.findByCategory_CategoryId(categoryId);
+        return productsPage.stream().map(this::setProductImage).toList();
     }
 
     private Product setProductImage(Product product) {
