@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -62,6 +63,17 @@ public class ProductService implements IProductService {
     public List<Product> getAllProductsByCategory(Long categoryId) {
         List<Product> productsPage = iProductRepository.findByCategory_CategoryId(categoryId);
         return productsPage.stream().map(this::setProductImage).toList();
+    }
+
+    @Override
+    public List<Product> getProductsByPriceRange(BigDecimal minPrice, BigDecimal maxPrice) {
+        try {
+            List<Product> productsPage = iProductRepository.findByPriceBetween(minPrice, maxPrice);
+            return productsPage.stream().map(this::setProductImage).toList();
+        } catch (Exception e) {
+            log.error("Error in ProductService.getProductsByPriceRange");
+            throw e;
+        }
     }
 
     private Product setProductImage(Product product) {

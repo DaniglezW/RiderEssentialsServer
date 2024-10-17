@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static com.rider.essentials.application.constants.Constants.API_BASE;
@@ -29,6 +30,12 @@ public interface IProductAPI {
             @RequestParam("query") String query,
             @RequestParam(defaultValue = "0", value="page", required = false) Integer page,
             @RequestParam(defaultValue = "10", value="size", required = false) Integer size
+    );
+
+    @GetMapping("/products/price")
+    List<Product> getProductByPrice(
+            @RequestParam("minPrice") BigDecimal minPrice,
+            @RequestParam("maxPrice") BigDecimal maxPrice
     );
 
     @GetMapping("/products/category/{categoryId}")

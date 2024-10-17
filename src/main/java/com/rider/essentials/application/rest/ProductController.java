@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -55,6 +56,17 @@ public class ProductController implements IProductAPI {
             return iProductService.getProductsByQuery(query, pageable);
         } catch (Exception e) {
             log.error("Error in ProductController.getProductsByQuery controller");
+            throw e;
+        }
+    }
+
+    @Override
+    public List<Product> getProductByPrice(BigDecimal minPrice, BigDecimal maxPrice) {
+        log.info("Entering into ProductController.getProductByPrice controller");
+        try {
+            return iProductService.getProductsByPriceRange(minPrice, maxPrice);
+        } catch (Exception e) {
+            log.error("Error in ProductController.getProductByPrice controller");
             throw e;
         }
     }
