@@ -1,5 +1,5 @@
 # Etapa de construcción
-FROM openjdk:21-alpine AS build
+FROM openjdk:21 AS build
 
 WORKDIR /app
 
