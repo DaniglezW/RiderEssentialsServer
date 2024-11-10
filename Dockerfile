@@ -3,8 +3,9 @@ FROM openjdk:21 AS build
 
 WORKDIR /app
 
-# Instalar Maven
-RUN apk add --no-cache maven
+# Instalar Maven usando apt-get y limpiar la caché
+RUN apt-get update && apt-get install -y maven \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copiar todo el proyecto dentro del contenedor
 COPY . .
