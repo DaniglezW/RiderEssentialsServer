@@ -1,11 +1,10 @@
 # Etapa de construcción
-FROM openjdk:21 AS build
+FROM openjdk:21-alpine AS build
 
 WORKDIR /app
 
-# Instalar Maven usando apt-get y limpiar la caché
-RUN apt-get update && apt-get install -y maven \
-    && rm -rf /var/lib/apt/lists/*
+# Instalar Maven usando apk (el gestor de paquetes de Alpine)
+RUN apk update && apk add --no-cache maven
 
 # Copiar todo el proyecto dentro del contenedor
 COPY . .
