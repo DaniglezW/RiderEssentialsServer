@@ -1,0 +1,15 @@
+com\rider\essentials\application\utils\Utils.class
+com\rider\essentials\domain\services\ProductService.class
+com\rider\essentials\repository\ICategoryRepository.class
+com\rider\essentials\application\rest\CategoryController.class
+com\rider\essentials\application\rest\ProductController.class
+com\rider\essentials\domain\services\interfaces\ICategoryService.class
+com\rider\essentials\repository\IProductRepository.class
+com\rider\essentials\domain\model\Category.class
+com\rider\essentials\application\rest\api\ICategoryAPI.class
+com\rider\essentials\domain\services\interfaces\IProductService.class
+com\rider\essentials\domain\model\Product.class
+com\rider\essentials\domain\services\CategoryService.class
+com\rider\essentials\Application.class
+com\rider\essentials\application\constants\Constants.class
+com\rider\essentials\application\rest\api\IProductAPI.class
