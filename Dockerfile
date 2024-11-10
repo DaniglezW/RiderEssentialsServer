@@ -1,5 +1,5 @@
 # Etapa de construcción
-FROM maven:3.8.7-openjdk-17 AS build
+FROM amazoncorretto:21-alpine AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
