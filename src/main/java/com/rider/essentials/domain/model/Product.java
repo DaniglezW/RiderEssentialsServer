@@ -28,8 +28,7 @@ public class Product {
     @Column(nullable = false)
     private BigDecimal price;
 
-    @Lob
-    @Column
+    @Column(columnDefinition = "bytea")
     private byte[] image;
 
     @Column(name = "image_url")
