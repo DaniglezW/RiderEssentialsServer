@@ -1,4 +1,5 @@
 com\rider\essentials\application\utils\Utils.class
+com\rider\essentials\config\CorsConfig.class
 com\rider\essentials\domain\services\ProductService.class
 com\rider\essentials\repository\ICategoryRepository.class
 com\rider\essentials\application\rest\CategoryController.class
