@@ -1,5 +1,6 @@
 package com.rider.essentials.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,5 +33,6 @@ public class Category {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "category")
+    @JsonIgnore
     private Set<Product> products;
 }

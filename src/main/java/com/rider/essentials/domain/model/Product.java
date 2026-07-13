@@ -38,9 +38,39 @@ public class Product {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @Column(length = 80)
+    private String brand;
+
+    @Column(name = "stock_quantity")
+    private Integer stockQuantity;
+
+    private Double rating;
+
+    @Column(name = "review_count")
+    private Integer reviewCount;
+
+    @Column(length = 30)
+    private String sku;
+
+    @Column(name = "compatible_makes", length = 500)
+    private String compatibleMakes;
+
+    @PrePersist
+    protected void onCreate() {
+        if (createdAt == null) {
+            createdAt = LocalDateTime.now();
+        }
+        updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
 }

@@ -10,4 +10,6 @@ public final class Constants {
 
     public static final int DEFAULT_IMAGE_PRODUCT_ID = 9999;
 
+    public static final String USER_EMAIL_HEADER = "X-User-Email";
+
 }
